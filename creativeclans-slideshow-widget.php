@@ -142,14 +142,14 @@ Author URI: http://www.creativeclans.nl
           , 'captions' => ''
       );
 
-      $module_absolute_path = get_option('siteurl') . '/'.PLUGINDIR.'/creativeclans-slideshow/';
-//      $module_path = PLUGINDIR.'/creativeclans-slideshow/';
+      $module_absolute_path = get_option('siteurl') . '/'.PLUGINDIR.'/creative-clans-slide-show/';
+//      $module_path = PLUGINDIR.'/creative-clans-slide-show/';
       $pathArray = explode('/', get_bloginfo('wpurl'));
       $module_path = $_SERVER['DOCUMENT_ROOT'];
       foreach ($pathArray as $key => $value) {
         if ($key > 2) $module_path .= "/$value"; 
       }
-      $module_path .= '/' . PLUGINDIR . '/creativeclans-slideshow/';
+      $module_path .= '/' . PLUGINDIR . '/creative-clans-slide-show/';
 
       if ( is_numeric($widget_args) ) $widget_args = array('number' => $widget_args);
       $widget_args = wp_parse_args($widget_args, array('number' => -1));
@@ -367,8 +367,8 @@ Author URI: http://www.creativeclans.nl
     
     function render_widget_creativeclans_slideshow($par, $moduleid) {
 
-      $module_absolute_path = get_option('home') . '/'.PLUGINDIR.'/creativeclans-slideshow/';
-      $module_path = PLUGINDIR.'/creativeclans-slideshow/';
+      $module_absolute_path = get_option('home') . '/'.PLUGINDIR.'/creative-clans-slide-show/';
+      $module_path = PLUGINDIR.'/creative-clans-slide-show/';
       $result = 
 <<<CCSSWIDGET
 <div id="cc-is{$moduleid}" class="ccslideshow" style="width:{$par['width']}px height:{$par['height']}px">
