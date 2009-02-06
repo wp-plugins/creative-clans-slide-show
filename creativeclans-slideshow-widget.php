@@ -2,8 +2,8 @@
 /*
 Plugin Name: Creative Clans Slide Show Wordpress Widget
 Plugin URI: http://www.creativeclans.nl
-Description: A widget to use the Creative Clans SlideShow in Wordpress
-Version: 1.0
+Description: A widget to use the Creative Clans SlideShow in Wordpress. The version 1.1 is permalink compatible. For more info visit the <a href="http://www.creativeclans.nl">Creative Clans website</a>.
+Version: 1.1
 Author: Guido Tonnaer
 Author URI: http://www.creativeclans.nl
 */
@@ -368,7 +368,78 @@ Author URI: http://www.creativeclans.nl
     function render_widget_creativeclans_slideshow($par, $moduleid) {
 
       $module_absolute_path = get_option('home') . '/'.PLUGINDIR.'/creative-clans-slide-show/';
-      $module_path = PLUGINDIR.'/creative-clans-slide-show/';
+//      $module_path = PLUGINDIR.'/creative-clans-slide-show/';
+      $pathArray = explode('/', get_bloginfo('wpurl'));
+      $module_path = '';
+      foreach ($pathArray as $key => $value) {
+        if ($key > 2) $module_path .= "/$value"; 
+      }
+      $module_path .= '/' . PLUGINDIR . '/creative-clans-slide-show/';
+
+      // If it doesn't exist yet, build config XML file
+      $write_module_path = $_SERVER['DOCUMENT_ROOT'];
+      foreach ($pathArray as $key => $value) {
+        if ($key > 2) $write_module_path .= "/$value"; 
+      }
+      $write_module_path .= '/' . PLUGINDIR . '/creative-clans-slide-show/';
+      $xmlconfig_filename = $write_module_path.'xmlconfig'.$moduleid.'.xml';
+      if (!file_exists($xmlconfig_filename)) {
+        // check and create effect strings
+        if ('' != $par['includeEffects']) $par['includeEffects'] = widget_creativeclans_slideshow_checkEffects($par['includeEffects']);
+        if ('' != $par['excludeEffects']) $par['excludeEffects'] = widget_creativeclans_slideshow_checkEffects($par['excludeEffects']);
+
+        // create config XML file        
+        $xml_data = '<?xml version="1.0" encoding="utf-8"?>'."\n";
+?><?php
+        $xml_data .= "<parameters>\n";
+        foreach ($par as $key=>$value) {
+        	$xml_data .= "<parameter name=\"$key\">$value</parameter>\n";
+        }
+        $xml_data .= "</parameters>\n";
+
+        // Write config XML file
+        $xmlconfig_file = fopen($xmlconfig_filename,'w');
+        fwrite($xmlconfig_file, $xml_data);
+        fclose($xmlconfig_file);
+      }
+
+      // If it doesn't exist yet, build slides XML file
+      $xmlslides_filename = $write_module_path.'xmlslides'.$moduleid.'.xml';
+      if (!file_exists($xmlslides_filename)) {
+        // check and create slide info strings
+        if ('' != $par['images']) $image = widget_creativeclans_slideshow_checkSlideInfo($par['images']);
+        if ('' != $par['links']) $url = widget_creativeclans_slideshow_checkSlideInfo($par['links']);
+        if ('' != $par['captions']) $title = widget_creativeclans_slideshow_checkSlideInfo($par['captions']);
+
+        // Build slides XML file
+        $xml_data = '<?xml version="1.0" encoding="utf-8"?>'."\n";
+?><?php
+        $xml_data .= "<images>\n";
+        for($i=0; $i<count($image); $i++) {
+          $xml_data .= "<image>\n";
+          $xml_data .= "<itemName>".trim($image[$i])."</itemName>\n";
+          if (isset($title[$i])) {
+            $xml_data .= "<itemCaption>".trim($title[$i])."</itemCaption>\n";
+          }
+          else {
+            $xml_data .= "<itemCaption></itemCaption>\n";
+          }
+          if (isset($url[$i])) {
+            $xml_data .= "<itemLink>".trim($url[$i])."</itemLink>\n";
+          }
+          else {
+            $xml_data .= "<itemLink></itemLink>\n";
+          }
+          $xml_data .= "</image>\n";
+        }
+        $xml_data .= '</images>'."\n";
+
+        // Write slides XML file
+        $xmlslides_file = fopen($xmlslides_filename,'w');
+        fwrite($xmlslides_file, $xml_data);
+        fclose($xmlslides_file);
+      }
+
       $result = 
 <<<CCSSWIDGET
 <div id="cc-is{$moduleid}" class="ccslideshow" style="width:{$par['width']}px height:{$par['height']}px">
