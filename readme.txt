@@ -1,7 +1,7 @@
 === Creative Clans Slide Show  ====
 Contributors: tonnaer
 Donate link: http://www.creativeclans.nl
-Tags: slideshow, presentation, flash, widget
+Tags: slideshow, presentation, flash, widget, creative, clans
 Requires at least: 2.7
 Tested up to: 2.7
 Stable tag: 1.1
