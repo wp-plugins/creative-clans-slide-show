@@ -57,9 +57,9 @@ Features:
 == Frequently Asked Questions ==
 
 = Where I can find more documentation? =
-On the plugin omepage.
+On the plugin homepage.
 
-= Can I make the slide show multi-lingual?
+= Can I make the slide show multi-lingual? =
 Yes you can. It involves using the qTranslate plugin and the Widget Logic plugin. Read all the details on the plugin homepage.
 
 == Screenshots ==
