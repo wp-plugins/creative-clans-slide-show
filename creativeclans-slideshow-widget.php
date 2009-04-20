@@ -3,7 +3,7 @@
 Plugin Name: Creative Clans Slide Show Wordpress Widget
 Plugin URI: http://www.creativeclans.nl
 Description: A widget to use the Creative Clans SlideShow in Wordpress. The version 1.1 is permalink compatible. For more info visit the <a href="http://www.creativeclans.nl">Creative Clans website</a>.
-Version: 1.1
+Version: 1.2
 Author: Guido Tonnaer
 Author URI: http://www.creativeclans.nl
 */
@@ -446,13 +446,15 @@ Author URI: http://www.creativeclans.nl
     <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
             codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0"
             width="{$par['width']}" height="{$par['height']}">
+      <param name="wmode" value="opaque" />
       <param name="movie" value="{$module_absolute_path}CCSlideShow.swf" />
-      <param name="FlashVars" value="config={$module_path}xmlconfig{$moduleid}.xml&amp;slides={$module_path}xmlslides{$moduleid}.xml" />
+      <param name="FlashVars" value="config={$module_absolute_path}xmlconfig{$moduleid}.xml&amp;slides={$module_absolute_path}xmlslides{$moduleid}.xml" />
       <embed src="{$module_absolute_path}CCSlideShow.swf" 
              type="application/x-shockwave-flash"
              pluginspage="http://www.macromedia.com/go/getflashplayer"
+             wmode="opaque"
              width="{$par['width']}" height="{$par['height']}" 
-      			 FlashVars="config={$module_path}xmlconfig{$moduleid}.xml&amp;slides={$module_path}xmlslides{$moduleid}.xml" />
+      			 FlashVars="config={$module_absolute_path}xmlconfig{$moduleid}.xml&amp;slides={$module_absolute_path}xmlslides{$moduleid}.xml" />
     </object>
 </div>
 CCSSWIDGET;
