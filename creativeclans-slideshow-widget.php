@@ -2,8 +2,8 @@
 /*
 Plugin Name: Creative Clans Slide Show Wordpress Widget
 Plugin URI: http://www.creativeclans.nl
-Description: A widget to use the Creative Clans SlideShow in Wordpress. The version 1.1 is permalink compatible. For more info visit the <a href="http://www.creativeclans.nl">Creative Clans website</a>.
-Version: 1.2
+Description: A widget to use the Creative Clans SlideShow in Wordpress. Version 1.2.1 also works if you've given 'wordpress its own directory' (see http://codex.wordpress.org/Giving_WordPress_Its_Own_Directory). For more info visit the <a href="http://www.creativeclans.nl">Creative Clans website</a>.
+Version: 1.2.1
 Author: Guido Tonnaer
 Author URI: http://www.creativeclans.nl
 */
@@ -367,7 +367,8 @@ Author URI: http://www.creativeclans.nl
     
     function render_widget_creativeclans_slideshow($par, $moduleid) {
 
-      $module_absolute_path = get_option('home') . '/'.PLUGINDIR.'/creative-clans-slide-show/';
+//      $module_absolute_path = get_option('home') . '/'.PLUGINDIR.'/creative-clans-slide-show/';
+      $module_absolute_path = get_bloginfo('wpurl') . '/'.PLUGINDIR.'/creative-clans-slide-show/';
 //      $module_path = PLUGINDIR.'/creative-clans-slide-show/';
       $pathArray = explode('/', get_bloginfo('wpurl'));
       $module_path = '';
