@@ -3,7 +3,7 @@ Contributors: tonnaer
 Donate link: http://www.creativeclans.nl
 Tags: slideshow, presentation, flash, widget, creative, clans
 Requires at least: 2.7
-Tested up to: 2.8.4
+Tested up to: 2.8.5
 Stable tag: 1.2.1
 
 A free widget to use the Creative Clans Slide Show in your Wordpress website. 
@@ -15,7 +15,7 @@ into your Wordpress 2.8 website, and can be entirely (or almost) personalized
 through a bunch of parameters.
 
 Features:
-* Succesfully tested with the new version 2.8 of Wordpress
+* Succesfully tested with the new version 2.8.5 of Wordpress
 * also works if you've given 'wordpress its own directory' (see http://codex.wordpress.org/Giving_WordPress_Its_Own_Directory)
 * works with redirects
 * works with permalinks
