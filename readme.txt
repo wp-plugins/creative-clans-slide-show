@@ -3,8 +3,8 @@ Contributors: tonnaer
 Donate link: http://www.creativeclans.nl
 Tags: slideshow, presentation, flash, widget, creative, clans
 Requires at least: 2.7
-Tested up to: 2.9
-Stable tag: 1.2.1
+Tested up to: 2.9.1
+Stable tag: 1.2.2
 
 A free widget to use the Creative Clans Slide Show in your Wordpress website. 
 
@@ -15,7 +15,7 @@ into your Wordpress 2.9 website, and can be entirely (or almost) personalized
 through a bunch of parameters.
 
 Features:
-* Succesfully tested with the new version 2.9 of Wordpress
+* Succesfully tested with the new version 2.9.1 of Wordpress
 * also works if you've given 'wordpress its own directory' (see http://codex.wordpress.org/Giving_WordPress_Its_Own_Directory)
 * works with redirects
 * works with permalinks
@@ -29,7 +29,7 @@ Features:
 * caption characteristics (position, style, font, fontsize, color, transparancy, etc)
   can be specified
 * you can have more than one slide show on your pages.
-* etc.
+* and lots, lots more...
 
 == Installation ==
 
@@ -69,6 +69,15 @@ Yes you can. It involves using the qTranslate plugin and the Widget Logic plugin
 No screenshots are available
 
 == Version history ==
+
+= Version 1.2.2 =
+* resolves a problem that presented itself on GoDaddy sites
+
+= Version 1.2.1 =
+* also works if you've given 'wordpress its own directory'
+
+= Version 1.2 =
+* works with redirects
 
 = Version 1.1 =
 * Works with permalinks

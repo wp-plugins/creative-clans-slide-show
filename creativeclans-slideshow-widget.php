@@ -2,13 +2,13 @@
 /*
 Plugin Name: Creative Clans Slide Show Wordpress Widget
 Plugin URI: http://www.creativeclans.nl
-Description: A widget to use the Creative Clans SlideShow in Wordpress. Version 1.2.1 also works if you've given 'wordpress its own directory' (see http://codex.wordpress.org/Giving_WordPress_Its_Own_Directory). For more info visit the <a href="http://www.creativeclans.nl">Creative Clans website</a>.
-Version: 1.2.1
+Description: A widget to use the Creative Clans SlideShow in Wordpress. For more info visit the <a href="http://www.creativeclans.nl">Creative Clans website</a>.
+Version: 1.2.2
 Author: Guido Tonnaer
 Author URI: http://www.creativeclans.nl
 */
 
-/*  Copyright 2009  Guido Tonnaer  (email : info@creativeclans.nl)
+/*  Copyright 2010  Guido Tonnaer  (email : info@creativeclans.nl)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -150,6 +150,9 @@ Author URI: http://www.creativeclans.nl
         if ($key > 2) $module_path .= "/$value"; 
       }
       $module_path .= '/' . PLUGINDIR . '/creative-clans-slide-show/';
+
+      // change of module path identification after problems with GoDaddy
+      $module_path = dirname(__FILE__) . '/';
 
       if ( is_numeric($widget_args) ) $widget_args = array('number' => $widget_args);
       $widget_args = wp_parse_args($widget_args, array('number' => -1));
@@ -377,12 +380,19 @@ Author URI: http://www.creativeclans.nl
       }
       $module_path .= '/' . PLUGINDIR . '/creative-clans-slide-show/';
 
+      // change of module path identification after problems with GoDaddy
+      $module_path = dirname(__FILE__) . '/';
+
       // If it doesn't exist yet, build config XML file
       $write_module_path = $_SERVER['DOCUMENT_ROOT'];
       foreach ($pathArray as $key => $value) {
         if ($key > 2) $write_module_path .= "/$value"; 
       }
       $write_module_path .= '/' . PLUGINDIR . '/creative-clans-slide-show/';
+      
+      // change of module path identification after problems with GoDaddy
+      $write_module_path = dirname(__FILE__) . '/';
+      
       $xmlconfig_filename = $write_module_path.'xmlconfig'.$moduleid.'.xml';
       if (!file_exists($xmlconfig_filename)) {
         // check and create effect strings
