@@ -1,22 +1,32 @@
 === Creative Clans Slide Show  ====
 Contributors: tonnaer
 Donate link: http://www.creativeclans.nl
-Tags: slideshow, presentation, flash, widget, creative, clans
+Tags: slideshow, presentation, flash, widget, creative clans
 Requires at least: 2.7
 Tested up to: 2.9.1
-Stable tag: 1.2.2
+Stable tag: 1.3
 
 A free widget to use the Creative Clans Slide Show in your Wordpress website. 
 
 == Description ==
 
-A free, small (only 12Kb) flash slide show widget, that can easily be integrated
+A free, small (only 13Kb) flash slide show widget, that can easily be integrated
 into your Wordpress 2.9 website, and can be entirely (or almost) personalized 
 through a bunch of parameters.
 
-Features:
-* Succesfully tested with the new version 2.9.1 of Wordpress
-* also works if you've given 'wordpress its own directory' (see http://codex.wordpress.org/Giving_WordPress_Its_Own_Directory)
+New features:
+* A title can be set
+* Slides can be loaded through a proxy, enabling cross domain image loading
+* The transparancy of the slide show's background can be set
+* A watermark image, its transparancy, position and full-window display can be set
+* A new border type: image
+* The possibility to set a different target window for each slide
+* The possibility to load all images (jpeg, gif and png) in a folder
+* The possibility to use dynamic xml creation, which should resolve any write permission problems
+* The possibility to choose if images must be resized to fit the slideshow window
+
+Other features:
+* also works if you've given [Wordpress its own directory](http://codex.wordpress.org/Giving_WordPress_Its_Own_Directory "Giving Wordpress its own directory")
 * works with redirects
 * works with permalinks
 * height and width can be set
@@ -29,11 +39,16 @@ Features:
 * caption characteristics (position, style, font, fontsize, color, transparancy, etc)
   can be specified
 * you can have more than one slide show on your pages.
-* and lots, lots more...
+* etc.
 
 == Installation ==
 
-1. Upload `creativeclans-slideshow` to the `/wp-content/plugins/` directory
+1. There are two ways to install the plugin:
+   a) Use the 'automatic install from the Wordpress plugin directory' option in the
+      Wordpress New widgets admin panel
+   OR
+   b) Download the zip-file, and use the 'upload' option in the Wordpress New widgets
+      admin panel
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Upload some pictures (remember to disable 'Organize my uploads into
    month- and year-based folders' in the Wordpress miscellanious settings, or use
@@ -46,7 +61,8 @@ Features:
    set of settings.
 6. To make the images appear in the slide show, you need to set the first two
    parameters:
-   * path : the absolute path to the slides folder, WITH the final slash.
+   * path : the absolute path (meaning it has to start with 'http://') to the slides 
+            folder, WITH the final slash.
        (use this setting when you have disabled 'Organize my uploads into
         month- and year-based folders' in the Wordpress miscellanious settings, 
         or use a plugin that allows you to upload the images to a single folder)
@@ -65,22 +81,38 @@ On the plugin homepage, and in the 'settings documentation.txt' document include
 = Can I make the slide show multi-lingual? =
 Yes you can. It involves using the qTranslate plugin and the Widget Logic plugin. Read all the details on the plugin homepage.
 
+= Why don't my .bmp images show?
+The slide show can use .jpeg, .jpg, .gif and .png. All other image formats won't be shown.
+
 == Screenshots ==
 No screenshots are available
 
-== Version history ==
+== Changelog ==
 
-= Version 1.2.2 =
+= 1.3 =
+* title can be set
+* proxy can be used to enable cross domain image loading
+* background transparancy can be set
+* a watermark image can be used and its transparancy, position and resizing to fit slideshow window set
+* a new border type (image) can be used
+* a different target window for each slide can be set
+* the possibility to load all images (jpeg, gif and png) in a folder
+* the possibility to use dynamic xml creation, which should resolve any write permission problems
+* the possibility to choose if images must be resized to fit the slideshow window
+* 'link for all slides' behavior has changed: it does no longer override the links specified for each single slide, but is used only if the slide has no link specified
+* 'caption text for all slides' behaviour has changed: it does no longer override the captions specified for each single slide, but is used only if the slide has no caption
+
+= 1.2.2 =
 * resolves a problem that presented itself on GoDaddy sites
 
-= Version 1.2.1 =
-* also works if you've given 'wordpress its own directory'
+= 1.2.1 =
+* also works if you've given 'Wordpress its own directory'
 
-= Version 1.2 =
-* works with redirects
+= 1.2 =
+* Works with redirects
 
-= Version 1.1 =
+= 1.1 =
 * Works with permalinks
 
-= Version 1.0 =
+= 1.0 =
 * Initial release version
