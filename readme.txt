@@ -81,7 +81,7 @@ On the plugin homepage, and in the 'settings documentation.txt' document include
 = Can I make the slide show multi-lingual? =
 Yes you can. It involves using the qTranslate plugin and the Widget Logic plugin. Read all the details on the plugin homepage.
 
-= Why don't my .bmp images show?
+= Why don't my .bmp images show? =
 The slide show can use .jpeg, .jpg, .gif and .png. All other image formats won't be shown.
 
 == Screenshots ==
