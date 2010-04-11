@@ -3,7 +3,7 @@
 Plugin Name: Creative Clans Slide Show Wordpress Widget
 Plugin URI: http://www.creativeclans.nl
 Description: A widget to use the Creative Clans SlideShow in Wordpress. For more info visit the <a href="http://www.creativeclans.nl">Creative Clans website</a>.
-Version: 1.3.1
+Version: 1.3.2
 Author: Guido Tonnaer
 Author URI: http://www.creativeclans.nl
 */
@@ -413,13 +413,13 @@ version: <?php echo get_option('widget_creativeclans_slideshow_version'); ?><br 
     <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
             codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0"
             width="{$par['width']}" height="{$par['height']}">
-      <param name="wmode" value="opaque" />
+      <param name="wmode" value="transparent" />
       <param name="movie" value="{$module_absolute_path}CCSlideShow.swf" />
       <param name="FlashVars" value="config={$module_absolute_path}xmlconfig{$moduleid}.xml&amp;slides={$module_absolute_path}xmlslides{$moduleid}.xml&amp;widget_number={$moduleid}&amp;scriptPath={$par['scriptPath']}&amp;dynamicXmlCreation={$par['dynamicXmlCreation']}" />
       <embed src="{$module_absolute_path}CCSlideShow.swf" 
              type="application/x-shockwave-flash"
              pluginspage="http://www.macromedia.com/go/getflashplayer"
-             wmode="opaque"
+             wmode="transparent"
              width="{$par['width']}" height="{$par['height']}" 
       			 FlashVars="config={$module_absolute_path}xmlconfig{$moduleid}.xml&amp;slides={$module_absolute_path}xmlslides{$moduleid}.xml&amp;widget_number={$moduleid}&amp;scriptPath={$par['scriptPath']}&amp;dynamicXmlCreation={$par['dynamicXmlCreation']}" />
     </object>
@@ -432,9 +432,9 @@ CCSSWIDGET;
 
 add_action('widgets_init', 'widget_ccss_init');
       if (!$ccssversion = get_option('widget_creativeclans_slideshow_version')) $ccssversion = '';
-      if ($ccssversion != '1.3.1') {
+      if ($ccssversion != '1.3.2') {
         // upgrade existing slideshows to version 1.3
-        if ($ccssversion != '1.3') {
+        if ($ccssversion != '1.3' && $ccssversion != '1.3.1') {
           if ($options = get_option('widget_creativeclans_slideshow')) {
             foreach ($options as $key=>$value) {
             	$options[$key]['proxyFlag'] = 0;
@@ -456,6 +456,6 @@ add_action('widgets_init', 'widget_ccss_init');
           }  
         }  
         // save new version number
-        update_option('widget_creativeclans_slideshow_version', '1.3.1');
+        update_option('widget_creativeclans_slideshow_version', '1.3.2');
       }
 ?>
