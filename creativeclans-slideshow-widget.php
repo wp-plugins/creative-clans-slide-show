@@ -3,7 +3,7 @@
 Plugin Name: Creative Clans Slide Show Wordpress Widget
 Plugin URI: http://www.creativeclans.nl
 Description: A widget to use the Creative Clans SlideShow in Wordpress. For more info visit the <a href="http://www.creativeclans.nl">Creative Clans website</a>.
-Version: 1.3.2
+Version: 1.3.3
 Author: Guido Tonnaer
 Author URI: http://www.creativeclans.nl
 */
@@ -432,9 +432,9 @@ CCSSWIDGET;
 
 add_action('widgets_init', 'widget_ccss_init');
       if (!$ccssversion = get_option('widget_creativeclans_slideshow_version')) $ccssversion = '';
-      if ($ccssversion != '1.3.2') {
+      if ($ccssversion != '1.3.3') {
         // upgrade existing slideshows to version 1.3
-        if ($ccssversion != '1.3' && $ccssversion != '1.3.1') {
+        if ($ccssversion != '1.3' && $ccssversion != '1.3.1' && $ccssversion != '1.3.2') {
           if ($options = get_option('widget_creativeclans_slideshow')) {
             foreach ($options as $key=>$value) {
             	$options[$key]['proxyFlag'] = 0;
@@ -456,6 +456,6 @@ add_action('widgets_init', 'widget_ccss_init');
           }  
         }  
         // save new version number
-        update_option('widget_creativeclans_slideshow_version', '1.3.2');
+        update_option('widget_creativeclans_slideshow_version', '1.3.3');
       }
 ?>

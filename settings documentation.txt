@@ -1,6 +1,10 @@
-Creative Clans Slide Show v1.3.2
+Creative Clans Slide Show v1.3.3
 
 Copyright 2008-2010 Guido Tonnaer
+
+
+For the most up-to-date documentation, see the Creative Clans website:
+http://www.creativeclans.nl
 
 
 Slide settings
@@ -17,6 +21,11 @@ Slide settings
 	defined in the 'Path' setting. 
 	To use this option, the image folder has to be present on the same site
 	as the slide show. No cross domain access is allowed.
+	
+	Attention: if set to 'yes', the 'Images', 'Captions', 'Links' and 'Link
+	           targets' settings will be ignored. This means you won't be 
+	           able to set different captions, links and link targets for 
+	           each slide.
 
 - Images
 	* Compulsory if 'Load all images from folder' is set to 'no' *
@@ -27,6 +36,9 @@ Slide settings
         the images are stored in different folders), then you'll have to add
         the (missing part of) the path to the image names).
 
+	Attention: this setting is ignored if 'Load all images from folder' is
+	           set to 'yes'.
+
 - Captions
 	List of the image captions, one caption per line.
 	If you don't want to give a caption to one of the images, just leave a 
@@ -34,12 +46,18 @@ Slide settings
 	If no caption is specified for a slide, the default caption text is used 
 	(see Caption settings - Text below).
 
+	Attention: this setting is ignored if 'Load all images from folder' is
+	           set to 'yes'.
+
 - Links
 	List of the image links, one link per line.
 	If you don't want to set a link for one of the images, just leave a blank
 	line.
 	If no link is specified for a slide, the default link is used 
 	(see Several settings - Link below).
+
+	Attention: this setting is ignored if 'Load all images from folder' is
+	           set to 'yes'.
 
 - Link targets
 	List of the image link targets, one target per line. 
@@ -52,6 +70,9 @@ Slide settings
 	- _blank  (A new window)
 	- _parent (The parent of the current frame)
 	- _top    (The top-level frame in the current window)
+
+	Attention: this setting is ignored if 'Load all images from folder' is
+	           set to 'yes'.
 
 
 
