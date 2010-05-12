@@ -90,7 +90,7 @@ No screenshots are available
 == Changelog ==
 
 = 1.3.3 =
-* Improved image loading management (consumes less bandwith)
+* Improved image loading management (consumes less bandwidth)
 
 = 1.3.2 =
 * Bugfix - hmtl wmode parameter set from opaque to transparent to get the transparent background to work
