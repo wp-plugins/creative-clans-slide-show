@@ -4,7 +4,7 @@ Donate link: http://www.creativeclans.nl
 Tags: slideshow, presentation, flash, widget, creative clans
 Requires at least: 2.7
 Tested up to: 2.9.2
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 
 A free widget to use the Creative Clans Slide Show in your Wordpress website. 
 
@@ -88,6 +88,9 @@ The slide show can use .jpeg, .jpg, .gif and .png. All other image formats won't
 No screenshots are available
 
 == Changelog ==
+
+= 1.3.4 =
+* Bugfix: load from folders didn't work correctly in 1.3.3
 
 = 1.3.3 =
 * Improved image loading management (consumes less bandwidth)
